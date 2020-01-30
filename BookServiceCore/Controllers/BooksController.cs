@@ -25,7 +25,6 @@ namespace BookService.Controllers
         // GET: api/Books
         public IQueryable<BookDTO> GetBooks()
         {
-            var temp = _db.Books.ToList();
             var books = from b in _db.Books
                         select new BookDTO()
                         {
