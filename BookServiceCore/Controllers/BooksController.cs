@@ -124,6 +124,7 @@ namespace BookService.Controllers
 
         // DELETE: api/Books/5
         //[ResponseType(typeof(Book))]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBook(int id)
         {
             Books book = await _db.Books.FindAsync(id);
