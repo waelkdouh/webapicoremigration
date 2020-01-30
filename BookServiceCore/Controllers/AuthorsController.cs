@@ -1,4 +1,5 @@
 ﻿using BookServiceCore.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -29,6 +30,8 @@ namespace BookServiceCore.Controllers
 
         // GET: api/Authors/5
         //[ResponseType(typeof(Author))]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAuthor(int id)
         {
